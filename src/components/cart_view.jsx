@@ -14,7 +14,7 @@ class CartView extends React.Component {
       <Grid direction="row">
          <Grid item sm={8}>
           {cartProducts.map((amiibo) => (
-            <Paper style={{ marginBottom: '10px', fontSize: '14px' }}>
+            <Paper className='n-cart-item'>
               <Grid
                 container
                 direction="row"

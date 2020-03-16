@@ -16,6 +16,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import { 
   fetchProducts, 
@@ -34,18 +36,25 @@ class MainContent extends React.Component {
   renderCart () {
     return (
       <Popper
-        style={{ position: 'absolute', top: '20px', right: '0', left: 'initial' }}
+        className='n-cart-display'
         placement="bottom"
         open={true}
-        disablePortal={true}
+        disablePortal={false}
       >
-        <Paper style={{ padding: '15px', maxWidth:'350px', fontSize:'12px' }}>
+        <Paper className='n-cart-display__content'>
           {this.props.cartProducts.map((item) => (
-            <p>{item.name}
+            <p>
+              {item.name}
               <DeleteIcon
                 onClick={() => this.props.deleteFromCart(item.name)} />
             </p>
           ))}
+         <Link to='/Cart'>
+            <Button color='primary'>
+              <ShoppingCartIcon/>
+              Ir a Carrito
+            </Button>
+         </Link>
         </Paper>
       </Popper>
     )
@@ -57,16 +66,18 @@ class MainContent extends React.Component {
 			<Router>
 				<AppBar position="static" className='n-appbar'>
 					<Toolbar>
-            <img
-              src='https://vignette.wikia.nocookie.net/es.pokemon/images/3/3b/Logo_de_amiibo.png/revision/latest?cb=20150909205748' 
-              style={{ width: '90px'}} 
-              alt='amibo'/>
-            <Link to='/Cart' style={{color: '#fff', flexGrow: '6'}}>Cart</Link>
+            <Link to='/'>
+              <img
+                className='n-appbar__image'
+                src='https://vignette.wikia.nocookie.net/es.pokemon/images/3/3b/Logo_de_amiibo.png/revision/latest?cb=20150909205748'
+                alt='amibo' />
+            </Link>
+            <Link to='/Cart'>Mi Carrito de compras</Link>
             {this.renderCart()}
           </Toolbar>
 				</AppBar>
 				<Container fixed>
-					<h1>Amiibo SHOP </h1>
+					<h3>Amiibo SHOP </h3>
           <Switch>
             <Route exact path="/" component={(props) => 
               <ProductView 

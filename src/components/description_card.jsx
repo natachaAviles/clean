@@ -11,12 +11,12 @@ class AmiiboCard extends React.Component {
     const { amiibo, addToCart } = this.props
 
     return (
-      <Card elevation={3} style={{ marginBottom: '10px', fontSize: '14px', padding: '5px 0' }}>
+      <Card elevation={3} className='n-product-card'>
         <CardActionArea>
           <CardMedia
-            style={{ height: '150px', backgroundSize: 'contain' }}
+            className='n-product-card__image'
             image={amiibo.image}
-            title="Contemplative Reptile"
+            title={amiibo.character}
           />
           <CardContent>
             <p>Personaje: {amiibo.name}</p>
@@ -30,7 +30,6 @@ class AmiiboCard extends React.Component {
             variant="extended"
             size="medium"
             color="primary"
-            aria-label="add"
             onClick={() => addToCart(amiibo)}
           >
             Agregar 
