@@ -1,27 +1,21 @@
 import React from 'react';
 
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-import AmiiboCard from '../components/description_card'
 
 class ProductView extends React.Component {
   render () {
 
-    const { products = [], pending, addToCart } = this.props
-
     return (
-      <Grid container
-        spacing={3}
+      <>
+      <Grid 
+        container
         justify="center"
-        alignItems="center">
-        {pending && <CircularProgress/>}
-        {products.map((amiibo) => (
-          <Grid item xs={3}>
-            <AmiiboCard amiibo={amiibo} addToCart={addToCart}></AmiiboCard>
-          </Grid>
-        ))}
+        alignItems="center" 
+        className='c-fullImage'>
       </Grid>
+      </>
     );
   }
 }

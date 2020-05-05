@@ -1,6 +1,6 @@
 body {
-  background-image:
-  url('https://vignette3.wikia.nocookie.net/amiibo-fanon/images/5/50/Wiki-background/revision/latest?cb=20160901152308&path-prefix=es');
+ background-color: #fff;
+ padding:0;
 }
 
 h3 {
@@ -11,59 +11,25 @@ h3 {
   background-color:#fff!important;
 }
 
-.n-appbar__image {
-  width: 150px;
-}
-
 .n-appbar a {
+  font-weight: 400;
+  font-size: 18px;
+  color: #3f51b5;
   text-decoration: none;
-  color: #ED8F03;
-  margin-left: 40px;
 }
 
-.n-product-card {
-  margin-bottom: 10px;
-  font-size: 16px;
+.c-fullImage {
+  background: url("https://cdn.pixabay.com/photo/2020/03/15/18/36/hands-4934590_960_720.jpg"), linear-gradient(to bottom, #4ac425, #4ac425);
+  height: 500px;
+  background-size: cover;
+  background-position: center;
 }
 
-.n-product-card__image {
-  height: 150px;
-  background-size: contain!important;
-  margin-top: 15px;
+.c-information {
+  padding: 20px;
 }
 
-.n-cart-item {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.n-cart-display {
-  position: absolute!important; 
-  top: 20px; 
-  right: 0;
-  left: initial!important;
-  z-index: 9999999;
-  box-shadow: none;
-}
-
-.n-cart-display svg {
-  margin-right: 20px;
-}
-
-.n-cart-display__content p {
-  flex:1;
-  font-size: 12px;
-  border-bottom: 1px solid #3f51b51c;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.n-cart-display__content {
-  padding:15px
-}
-
-.n-cart-display p > svg {
-  margin-left: 20px;
-  font-size: 20px;
+.c-footer {
+  background: #330867;
+  height: 200px
 }
